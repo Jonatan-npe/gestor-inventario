@@ -35,7 +35,10 @@ Inventario::Inventario(QWidget *parent)
     ui->tableView->setSortingEnabled(true);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 
-    // 5.conexiones:
+    // 5. Implementación de la ventana refresh
+    ui->comboFiltrarTipo->addItems({"Todos", "Electrónico", "Mecánico", "Herramienta", "Consumible"});
+
+    // 6.conexiones:
     connect(ui->lineEditBuscar, &QLineEdit::textChanged,
             this, &Inventario::on_buscarTextoCambiado);
 
@@ -53,6 +56,9 @@ Inventario::Inventario(QWidget *parent)
 
     connect(ui->tableView, &QTableView::doubleClicked,
             this, &Inventario::on_editarClicked);
+
+    connect(ui->comboFiltrarTipo, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &Inventario::on_filtrarPorTipo);
 }
 
 Inventario::~Inventario()
@@ -75,11 +81,35 @@ void Inventario::on_buscarTextoCambiado(const QString &texto)
     if (!m_proxyModel || !m_componentModel) return;
 
     QRegExp regex(texto, Qt::CaseInsensitive, QRegExp::FixedString);
-    m_proxyModel->setFilterRegExp(regex);
+    m_proxyModel->setFilterRegExp(QRegExp(texto, Qt::CaseInsensitive));
 
     // Actualizar vista si es necesario
     ui->tableView->viewport()->update();
 }
+
+//Implementación del filtrado
+void Inventario::on_filtrarPorTipo(int index)
+{
+    QString tipoFiltro = "";
+
+    switch(index) {
+        case 1: tipoFiltro = "Electrónico"; break;
+        case 2: tipoFiltro = "Mecánico"; break;
+        case 3: tipoFiltro = "Herramienta"; break;
+        case 4: tipoFiltro = "Consumible"; break;
+        default: tipoFiltro = "";
+    }
+
+    // Filtra por la columna de tipo (asumiendo que es la columna 2)
+    m_proxyModel->setFilterKeyColumn(2); // Columna de tipo
+    m_proxyModel->setFilterFixedString(tipoFiltro);
+
+    // Si es "Todos", mostrar todo
+    if (tipoFiltro.isEmpty()) {
+        m_proxyModel->setFilterWildcard("*");
+    }
+}
+
 void Inventario::on_anadirClicked() {
     ComponentDialog dialog(this); // Usará los valores por defecto
     if (dialog.exec() == QDialog::Accepted) {

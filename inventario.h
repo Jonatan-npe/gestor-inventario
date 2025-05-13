@@ -20,6 +20,7 @@ public:
     ~Inventario();
 
 private slots:
+    void on_filtrarPorTipo(int index);
     void on_buscarTextoCambiado(const QString &texto);
     void on_anadirClicked();
     void on_editarClicked();
