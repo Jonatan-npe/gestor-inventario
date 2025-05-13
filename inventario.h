@@ -1,5 +1,5 @@
-#ifndef INVETARIO_H
-#define INVETARIO_H
+#ifndef INVENTARIO_H
+#define INVENTARIO_H
 
 #include <QMainWindow>
 
@@ -14,6 +14,13 @@ class Inventario : public QMainWindow
 public:
     Inventario(QWidget *parent = nullptr);
     ~Inventario();
+
+private slots:
+    void on_buscarTextoCambiado(const QString &texto);
+    void on_anadirClicked();
+    void on_editarClicked();
+    void on_eliminarClicked();
+    void on_reporteClicked();
 
 private:
     Ui::Inventario *ui;

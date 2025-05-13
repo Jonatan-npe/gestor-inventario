@@ -104,32 +104,32 @@ CMakeFiles/Inventario.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Inventario.dir/main.cpp.s"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonatan/Inventario/main.cpp -o CMakeFiles/Inventario.dir/main.cpp.s
 
-CMakeFiles/Inventario.dir/invetario.cpp.o: CMakeFiles/Inventario.dir/flags.make
-CMakeFiles/Inventario.dir/invetario.cpp.o: /home/jonatan/Inventario/invetario.cpp
-CMakeFiles/Inventario.dir/invetario.cpp.o: CMakeFiles/Inventario.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Inventario.dir/invetario.cpp.o"
-	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Inventario.dir/invetario.cpp.o -MF CMakeFiles/Inventario.dir/invetario.cpp.o.d -o CMakeFiles/Inventario.dir/invetario.cpp.o -c /home/jonatan/Inventario/invetario.cpp
+CMakeFiles/Inventario.dir/inventario.cpp.o: CMakeFiles/Inventario.dir/flags.make
+CMakeFiles/Inventario.dir/inventario.cpp.o: /home/jonatan/Inventario/inventario.cpp
+CMakeFiles/Inventario.dir/inventario.cpp.o: CMakeFiles/Inventario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Inventario.dir/inventario.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Inventario.dir/inventario.cpp.o -MF CMakeFiles/Inventario.dir/inventario.cpp.o.d -o CMakeFiles/Inventario.dir/inventario.cpp.o -c /home/jonatan/Inventario/inventario.cpp
 
-CMakeFiles/Inventario.dir/invetario.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Inventario.dir/invetario.cpp.i"
-	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonatan/Inventario/invetario.cpp > CMakeFiles/Inventario.dir/invetario.cpp.i
+CMakeFiles/Inventario.dir/inventario.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Inventario.dir/inventario.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonatan/Inventario/inventario.cpp > CMakeFiles/Inventario.dir/inventario.cpp.i
 
-CMakeFiles/Inventario.dir/invetario.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Inventario.dir/invetario.cpp.s"
-	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonatan/Inventario/invetario.cpp -o CMakeFiles/Inventario.dir/invetario.cpp.s
+CMakeFiles/Inventario.dir/inventario.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Inventario.dir/inventario.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonatan/Inventario/inventario.cpp -o CMakeFiles/Inventario.dir/inventario.cpp.s
 
 # Object files for target Inventario
 Inventario_OBJECTS = \
 "CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/Inventario.dir/main.cpp.o" \
-"CMakeFiles/Inventario.dir/invetario.cpp.o"
+"CMakeFiles/Inventario.dir/inventario.cpp.o"
 
 # External object files for target Inventario
 Inventario_EXTERNAL_OBJECTS =
 
 Inventario: CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o
 Inventario: CMakeFiles/Inventario.dir/main.cpp.o
-Inventario: CMakeFiles/Inventario.dir/invetario.cpp.o
+Inventario: CMakeFiles/Inventario.dir/inventario.cpp.o
 Inventario: CMakeFiles/Inventario.dir/build.make
 Inventario: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
 Inventario: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.13

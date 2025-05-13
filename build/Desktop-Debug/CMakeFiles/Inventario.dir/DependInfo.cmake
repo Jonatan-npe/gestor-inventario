@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "Inventario_autogen/timestamp" "custom" "Inventario_autogen/deps"
   "/home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/mocs_compilation.cpp" "CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o.d"
-  "/home/jonatan/Inventario/invetario.cpp" "CMakeFiles/Inventario.dir/invetario.cpp.o" "gcc" "CMakeFiles/Inventario.dir/invetario.cpp.o.d"
+  "/home/jonatan/Inventario/inventario.cpp" "CMakeFiles/Inventario.dir/inventario.cpp.o" "gcc" "CMakeFiles/Inventario.dir/inventario.cpp.o.d"
   "/home/jonatan/Inventario/main.cpp" "CMakeFiles/Inventario.dir/main.cpp.o" "gcc" "CMakeFiles/Inventario.dir/main.cpp.o.d"
   )
 

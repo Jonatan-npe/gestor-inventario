@@ -1,4 +1,4 @@
-#include "invetario.h"
+#include "inventario.h"
 
 #include <QApplication>
 

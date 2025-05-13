@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Inventario_autogen"
-  "Inventario_autogen/include/ui_invetario.h"
+  "Inventario_autogen/include/ui_inventario.h"
   "Inventario_autogen/mocs_compilation.cpp"
   "Inventario_autogen/timestamp"
 )

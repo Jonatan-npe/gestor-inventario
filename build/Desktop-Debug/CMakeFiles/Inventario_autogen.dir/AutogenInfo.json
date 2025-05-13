@@ -76,9 +76,9 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/jonatan/Inventario/invetario.h",
+			"/home/jonatan/Inventario/inventario.h",
 			"MU",
-			"EWIEGA46WW/moc_invetario.cpp",
+			"EWIEGA46WW/moc_inventario.cpp",
 			null
 		]
 	],
@@ -133,7 +133,7 @@
 	"SETTINGS_FILE" : "/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles/Inventario_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/jonatan/Inventario/invetario.cpp", "MU", null ],
+		[ "/home/jonatan/Inventario/inventario.cpp", "MU", null ],
 		[ "/home/jonatan/Inventario/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

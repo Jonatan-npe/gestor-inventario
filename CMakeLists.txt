@@ -14,9 +14,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        invetario.cpp
-        invetario.h
-        invetario.ui
+        inventario.cpp
+        inventario.h
+        inventario.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
