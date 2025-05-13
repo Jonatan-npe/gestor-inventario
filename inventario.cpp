@@ -1,14 +1,18 @@
 #include "inventario.h"
 #include "ui_inventario.h"
+#include "ComponentDialog.h"
 #include <QMessageBox>
 #include <QDebug>
 
 Inventario::Inventario(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::Inventario)
+    : QMainWindow(parent), ui(new Ui::Inventario), m_dbManager(new DatabaseManager(this))
 {
     ui->setupUi(this);
 
+    if (!m_dbManager->initialize()) {
+        QMessageBox::critical(this, "Error", "No se pudo iniciar la base de datos");
+        qApp->exit(1);
+    }
     // Conectar señales y slots
     connect(ui->lineEditBuscar, &QLineEdit::textChanged,
             this, &Inventario::on_buscarTextoCambiado);
@@ -38,12 +42,24 @@ void Inventario::on_buscarTextoCambiado(const QString &texto)
     // Aquí implementarás la lógica de filtrado más adelante
 }
 
-void Inventario::on_anadirClicked()
-{
-    QMessageBox::information(this, "Añadir", "Función Añadir seleccionada");
-    // Aquí abrirás el diálogo para añadir nuevos items
-}
+void Inventario::on_anadirClicked() {
+    ComponentDialog dialog(this);
+    if (dialog.exec() == QDialog::Accepted) {
+        bool success = m_dbManager->addComponent(
+            dialog.nombre(),
+            dialog.tipo(),
+            dialog.cantidad(),
+            dialog.ubicacion(),
+            dialog.fechaAdquisicion()
+            );
 
+        if (!success) {
+            QMessageBox::warning(this, "Error",
+                                 "No se pudo guardar el componente: " +
+                                     m_dbManager->lastError().text());
+        }
+    }
+}
 void Inventario::on_editarClicked()
 {
     QMessageBox::information(this, "Editar", "Función Editar seleccionada");

@@ -9,47 +9,62 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Sql)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
 
+# Define PROJECT_SOURCES (que faltaba en tu versión)
 set(PROJECT_SOURCES
-        main.cpp
-        inventario.cpp
-        inventario.h
-        inventario.ui
+    main.cpp
+    inventario.cpp
+    inventario.h
+    inventario.ui
+)
+
+set(COMPONENT_SOURCES
+    Component/ComponentDialog.h
+    Component/ComponentDialog.cpp
+    Component/ComponentDialog.ui
+)
+
+set(DATABASE_SOURCES
+    Database/DatabaseManager.h
+    Database/DatabaseManager.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Inventario
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ${COMPONENT_SOURCES}
+        ${DATABASE_SOURCES}
     )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET Inventario APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
         add_library(Inventario SHARED
             ${PROJECT_SOURCES}
+            ${COMPONENT_SOURCES}
+            ${DATABASE_SOURCES}
         )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(Inventario
             ${PROJECT_SOURCES}
+            ${COMPONENT_SOURCES}
+            ${DATABASE_SOURCES}
+            Models/componentmodel.h Models/componentmodel.cpp
         )
     endif()
 endif()
 
-target_link_libraries(Inventario PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Inventario PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Sql
+)
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
+# Configuración para macOS/iOS
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.Inventario)
+    set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.Inventario)
 endif()
+
 set_target_properties(Inventario PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}

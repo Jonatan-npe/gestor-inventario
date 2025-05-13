@@ -1,7 +1,7 @@
 CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o: \
  /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/moc_inventario.cpp \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/YIUVBKPGNP/moc_ComponentDialog.cpp \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -116,9 +116,9 @@ CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../inventario.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/YIUVBKPGNP/../../../../Component/ComponentDialog.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QDialog \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
@@ -285,5 +285,22 @@ CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QDate \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/54JWUIP5Q2/moc_DatabaseManager.cpp \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/54JWUIP5Q2/../../../../Database/DatabaseManager.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlDatabase \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qsqldatabase.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsql-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlError \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qsqlerror.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/moc_inventario.cpp \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../inventario.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../Database/DatabaseManager.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h

@@ -1,9 +1,10 @@
 CMakeFiles/Inventario.dir/main.cpp.o: /home/jonatan/Inventario/main.cpp \
  /usr/include/stdc-predef.h /home/jonatan/Inventario/inventario.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+ /home/jonatan/Inventario/Database/DatabaseManager.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
  /usr/include/c++/13/type_traits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -100,14 +101,7 @@ CMakeFiles/Inventario.dir/main.cpp.o: /home/jonatan/Inventario/main.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
@@ -243,6 +237,25 @@ CMakeFiles/Inventario.dir/main.cpp.o: /home/jonatan/Inventario/main.cpp \
  /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
  /usr/include/c++/13/limits /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlDatabase \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qsqldatabase.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsql-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlError \
+ /usr/include/x86_64-linux-gnu/qt5/QtSql/qsqlerror.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QDate \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
@@ -264,8 +277,6 @@ CMakeFiles/Inventario.dir/main.cpp.o: /home/jonatan/Inventario/main.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
  /usr/include/c++/13/memory \
  /usr/include/c++/13/bits/stl_raw_storage_iter.h \

@@ -118,11 +118,56 @@ CMakeFiles/Inventario.dir/inventario.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Inventario.dir/inventario.cpp.s"
 	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonatan/Inventario/inventario.cpp -o CMakeFiles/Inventario.dir/inventario.cpp.s
 
+CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o: CMakeFiles/Inventario.dir/flags.make
+CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o: /home/jonatan/Inventario/Component/ComponentDialog.cpp
+CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o: CMakeFiles/Inventario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o -MF CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o.d -o CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o -c /home/jonatan/Inventario/Component/ComponentDialog.cpp
+
+CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonatan/Inventario/Component/ComponentDialog.cpp > CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.i
+
+CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonatan/Inventario/Component/ComponentDialog.cpp -o CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.s
+
+CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o: CMakeFiles/Inventario.dir/flags.make
+CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o: /home/jonatan/Inventario/Database/DatabaseManager.cpp
+CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o: CMakeFiles/Inventario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o -MF CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o.d -o CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o -c /home/jonatan/Inventario/Database/DatabaseManager.cpp
+
+CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonatan/Inventario/Database/DatabaseManager.cpp > CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.i
+
+CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonatan/Inventario/Database/DatabaseManager.cpp -o CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.s
+
+CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o: CMakeFiles/Inventario.dir/flags.make
+CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o: /home/jonatan/Inventario/Models/componentmodel.cpp
+CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o: CMakeFiles/Inventario.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o -MF CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o.d -o CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o -c /home/jonatan/Inventario/Models/componentmodel.cpp
+
+CMakeFiles/Inventario.dir/Models/componentmodel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Inventario.dir/Models/componentmodel.cpp.i"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonatan/Inventario/Models/componentmodel.cpp > CMakeFiles/Inventario.dir/Models/componentmodel.cpp.i
+
+CMakeFiles/Inventario.dir/Models/componentmodel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Inventario.dir/Models/componentmodel.cpp.s"
+	/usr/bin/g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonatan/Inventario/Models/componentmodel.cpp -o CMakeFiles/Inventario.dir/Models/componentmodel.cpp.s
+
 # Object files for target Inventario
 Inventario_OBJECTS = \
 "CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/Inventario.dir/main.cpp.o" \
-"CMakeFiles/Inventario.dir/inventario.cpp.o"
+"CMakeFiles/Inventario.dir/inventario.cpp.o" \
+"CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o" \
+"CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o" \
+"CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o"
 
 # External object files for target Inventario
 Inventario_EXTERNAL_OBJECTS =
@@ -130,12 +175,16 @@ Inventario_EXTERNAL_OBJECTS =
 Inventario: CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o
 Inventario: CMakeFiles/Inventario.dir/main.cpp.o
 Inventario: CMakeFiles/Inventario.dir/inventario.cpp.o
+Inventario: CMakeFiles/Inventario.dir/Component/ComponentDialog.cpp.o
+Inventario: CMakeFiles/Inventario.dir/Database/DatabaseManager.cpp.o
+Inventario: CMakeFiles/Inventario.dir/Models/componentmodel.cpp.o
 Inventario: CMakeFiles/Inventario.dir/build.make
 Inventario: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
+Inventario: /usr/lib/x86_64-linux-gnu/libQt5Sql.so.5.15.13
 Inventario: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.13
 Inventario: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.13
 Inventario: CMakeFiles/Inventario.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Inventario"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Inventario"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Inventario.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

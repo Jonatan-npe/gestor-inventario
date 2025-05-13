@@ -68,6 +68,8 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
 		"/usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfig.cmake",
 		"/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/jonatan/Inventario",
@@ -75,6 +77,24 @@
 	"DEP_FILE_RULE_NAME" : "Inventario_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"/home/jonatan/Inventario/Component/ComponentDialog.h",
+			"MU",
+			"YIUVBKPGNP/moc_ComponentDialog.cpp",
+			null
+		],
+		[
+			"/home/jonatan/Inventario/Database/DatabaseManager.h",
+			"MU",
+			"54JWUIP5Q2/moc_DatabaseManager.cpp",
+			null
+		],
+		[
+			"/home/jonatan/Inventario/Models/componentmodel.h",
+			"MU",
+			"25IR5XJDBU/moc_componentmodel.cpp",
+			null
+		],
 		[
 			"/home/jonatan/Inventario/inventario.h",
 			"MU",
@@ -85,7 +105,7 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_SQL_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -100,6 +120,7 @@
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
 		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtSql",
 		"/usr/include/c++/13",
 		"/usr/include/x86_64-linux-gnu/c++/13",
 		"/usr/include/c++/13/backward",
@@ -133,6 +154,9 @@
 	"SETTINGS_FILE" : "/home/jonatan/Inventario/build/Desktop-Debug/CMakeFiles/Inventario_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/jonatan/Inventario/Component/ComponentDialog.cpp", "MU", null ],
+		[ "/home/jonatan/Inventario/Database/DatabaseManager.cpp", "MU", null ],
+		[ "/home/jonatan/Inventario/Models/componentmodel.cpp", "MU", null ],
 		[ "/home/jonatan/Inventario/inventario.cpp", "MU", null ],
 		[ "/home/jonatan/Inventario/main.cpp", "MU", null ]
 	],

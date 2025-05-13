@@ -1,6 +1,8 @@
 #ifndef INVENTARIO_H
 #define INVENTARIO_H
 
+#include "Database/DatabaseManager.h"
+
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -24,5 +26,6 @@ private slots:
 
 private:
     Ui::Inventario *ui;
+    DatabaseManager *m_dbManager;
 };
 #endif // INVENTARIO_H

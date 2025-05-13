@@ -1,5 +1,6 @@
 /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/moc_inventario.cpp: /home/jonatan/Inventario/inventario.h \
   /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/moc_predefs.h \
+  /home/jonatan/Inventario/Database/DatabaseManager.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \
@@ -239,6 +240,8 @@
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDate \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -252,6 +255,7 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
@@ -317,6 +321,12 @@
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlDatabase \
+  /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlError \
+  /usr/include/x86_64-linux-gnu/qt5/QtSql/qsqldatabase.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtSql/qsqlerror.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsql-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsqlglobal.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
