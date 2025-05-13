@@ -34,6 +34,15 @@
      </rect>
     </property>
     <property name="text">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Normal</enum>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="placeholderText">
      <string>Buscar: ...</string>
     </property>
    </widget>
@@ -42,18 +51,21 @@
      <rect>
       <x>450</x>
       <y>160</y>
-      <width>72</width>
+      <width>101</width>
       <height>25</height>
      </rect>
     </property>
     <property name="toolTip">
      <string>Seleccciona el modo de filtrado para los datos</string>
     </property>
-    <property name="editable">
-     <bool>true</bool>
-    </property>
     <property name="currentText">
+     <string/>
+    </property>
+    <property name="placeholderText">
      <string>Filtrar</string>
+    </property>
+    <property name="duplicatesEnabled">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="btnAnadir">
