@@ -17,7 +17,14 @@ public:
     bool addComponent(const QString &name, const QString &type,
                       int quantity, const QString &location,
                       const QDate &purchaseDate);
+    bool actualizarComponente(int id, const QString& nombre, const QString& tipo,
+                              int cantidad, const QString& ubicacion,
+                              const QDate& fecha);
+    bool eliminarComponente(const QString &id);
+
     QVector<QStringList> getAllComponents() const;
+
+
     QSqlError lastError() const;
 
 private:

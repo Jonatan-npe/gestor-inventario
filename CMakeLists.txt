@@ -30,27 +30,35 @@ set(DATABASE_SOURCES
     Database/DatabaseManager.h
     Database/DatabaseManager.cpp
 )
+set(MODEL_SOURCES
+    Models/ComponentModel.h
+    Models/ComponentModel.cpp
+)
+set(FILTER_SOURCES
+    Models/CustomFilterProxyModel.h
+    Models/CustomFilterProxyModel.cpp
+)
 
+set(ALL_SOURCES
+    ${PROJECT_SOURCES}
+    ${COMPONENT_SOURCES}
+    ${DATABASE_SOURCES}
+    ${MODEL_SOURCES}
+    ${FILTER_SOURCES}
+)
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Inventario
         MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-        ${COMPONENT_SOURCES}
-        ${DATABASE_SOURCES}
+        ${ALL_SOURCES}
     )
 else()
     if(ANDROID)
         add_library(Inventario SHARED
-            ${PROJECT_SOURCES}
-            ${COMPONENT_SOURCES}
-            ${DATABASE_SOURCES}
+            ${ALL_SOURCES}
         )
     else()
         add_executable(Inventario
-            ${PROJECT_SOURCES}
-            ${COMPONENT_SOURCES}
-            ${DATABASE_SOURCES}
-            Models/componentmodel.h Models/componentmodel.cpp
+            ${ALL_SOURCES}
         )
     endif()
 endif()

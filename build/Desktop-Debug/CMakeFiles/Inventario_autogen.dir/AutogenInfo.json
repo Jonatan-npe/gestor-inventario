@@ -90,9 +90,15 @@
 			null
 		],
 		[
-			"/home/jonatan/Inventario/Models/componentmodel.h",
+			"/home/jonatan/Inventario/Models/ComponentModel.h",
 			"MU",
-			"25IR5XJDBU/moc_componentmodel.cpp",
+			"25IR5XJDBU/moc_ComponentModel.cpp",
+			null
+		],
+		[
+			"/home/jonatan/Inventario/Models/CustomFilterProxyModel.h",
+			"MU",
+			"25IR5XJDBU/moc_CustomFilterProxyModel.cpp",
 			null
 		],
 		[
@@ -156,7 +162,12 @@
 	[
 		[ "/home/jonatan/Inventario/Component/ComponentDialog.cpp", "MU", null ],
 		[ "/home/jonatan/Inventario/Database/DatabaseManager.cpp", "MU", null ],
-		[ "/home/jonatan/Inventario/Models/componentmodel.cpp", "MU", null ],
+		[ "/home/jonatan/Inventario/Models/ComponentModel.cpp", "MU", null ],
+		[
+			"/home/jonatan/Inventario/Models/CustomFilterProxyModel.cpp",
+			"MU",
+			null
+		],
 		[ "/home/jonatan/Inventario/inventario.cpp", "MU", null ],
 		[ "/home/jonatan/Inventario/main.cpp", "MU", null ]
 	],

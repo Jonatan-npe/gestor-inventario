@@ -2,8 +2,10 @@
 #define INVENTARIO_H
 
 #include "Database/DatabaseManager.h"
+#include "Models/ComponentModel.h"
 
 #include <QMainWindow>
+#include <QSortFilterProxyModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Inventario; }
@@ -25,7 +27,10 @@ private slots:
     void on_reporteClicked();
 
 private:
+    void configurarBusqueda();
     Ui::Inventario *ui;
     DatabaseManager *m_dbManager;
+    ComponentModel* m_componentModel;
+    QSortFilterProxyModel* m_proxyModel;
 };
 #endif // INVENTARIO_H

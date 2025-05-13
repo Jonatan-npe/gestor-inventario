@@ -14,7 +14,7 @@
    <string>Invetario</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableView" name="TableComponents">
+   <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
       <x>180</x>

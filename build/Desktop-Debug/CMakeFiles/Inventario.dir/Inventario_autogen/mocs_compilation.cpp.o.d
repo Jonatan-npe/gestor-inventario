@@ -297,9 +297,27 @@ CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtSql/qtsql-config.h \
  /usr/include/x86_64-linux-gnu/qt5/QtSql/QSqlError \
  /usr/include/x86_64-linux-gnu/qt5/QtSql/qsqlerror.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/25IR5XJDBU/moc_ComponentModel.cpp \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/25IR5XJDBU/../../../../Models/ComponentModel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QAbstractTableModel \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /usr/include/c++/13/variant \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/25IR5XJDBU/../../../../Models/../Database/DatabaseManager.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/25IR5XJDBU/moc_CustomFilterProxyModel.cpp \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/25IR5XJDBU/../../../../Models/CustomFilterProxyModel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QSortFilterProxyModel \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
  /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/moc_inventario.cpp \
  /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../inventario.h \
  /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../Database/DatabaseManager.h \
+ /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../Models/ComponentModel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
