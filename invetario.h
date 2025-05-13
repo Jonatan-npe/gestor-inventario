@@ -4,20 +4,18 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class Invetario;
-}
+namespace Ui { class Inventario; }
 QT_END_NAMESPACE
 
-class Invetario : public QMainWindow
+class Inventario : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Invetario(QWidget *parent = nullptr);
-    ~Invetario();
+    Inventario(QWidget *parent = nullptr);
+    ~Inventario();
 
 private:
-    Ui::Invetario *ui;
+    Ui::Inventario *ui;
 };
-#endif // INVETARIO_H
+#endif // INVENTARIO_H

@@ -1,14 +1,14 @@
 #include "invetario.h"
 #include "./ui_invetario.h"
 
-Invetario::Invetario(QWidget *parent)
+Inventario::Inventario(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::Invetario)
+    , ui(new Ui::Inventario)
 {
     ui->setupUi(this);
 }
 
-Invetario::~Invetario()
+Inventario::~Inventario()
 {
     delete ui;
 }
