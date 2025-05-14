@@ -3,10 +3,17 @@
 #include <QSqlError>
 #include <QDebug>
 
+static const QString CONNECTION_NAME = "main_connection";
+
 DatabaseManager::DatabaseManager(QObject *parent) : QObject(parent) {}
 
 bool DatabaseManager::initialize(const QString &databasePath) {
-    m_db = QSqlDatabase::addDatabase("QSQLITE");
+    // Usa una conexión nombrada para evitar duplicados
+    if (QSqlDatabase::contains(CONNECTION_NAME)) {
+        m_db = QSqlDatabase::database(CONNECTION_NAME);
+    } else {
+        m_db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
+    }
     m_db.setDatabaseName(databasePath);
 
     if (!m_db.open()) {
@@ -17,7 +24,7 @@ bool DatabaseManager::initialize(const QString &databasePath) {
 }
 
 bool DatabaseManager::createTables() {
-    QSqlQuery query;
+    QSqlQuery query(m_db);
     return query.exec(
         "CREATE TABLE IF NOT EXISTS components ("
         "id INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -26,17 +33,17 @@ bool DatabaseManager::createTables() {
         "quantity INTEGER NOT NULL,"
         "location TEXT NOT NULL,"
         "purchase_date TEXT NOT NULL)"
-        );
+    );
 }
 
 bool DatabaseManager::addComponent(const QString &name, const QString &type,
                                    int quantity, const QString &location,
                                    const QDate &purchaseDate) {
-    QSqlQuery query;
+    QSqlQuery query(m_db);
     query.prepare(
         "INSERT INTO components (name, type, quantity, location, purchase_date) "
         "VALUES (:name, :type, :quantity, :location, :date)"
-        );
+    );
     query.bindValue(":name", name);
     query.bindValue(":type", type);
     query.bindValue(":quantity", quantity);
@@ -54,7 +61,7 @@ bool DatabaseManager::actualizarComponente(int id, const QString& nombre,
                                            const QString& tipo, int cantidad,
                                            const QString& ubicacion,
                                            const QDate& fecha) {
-    QSqlQuery query;
+    QSqlQuery query(m_db);
     query.prepare(
         "UPDATE components SET "
         "name = :name, "
@@ -63,7 +70,7 @@ bool DatabaseManager::actualizarComponente(int id, const QString& nombre,
         "location = :location, "
         "purchase_date = :date "
         "WHERE id = :id"
-        );
+    );
 
     query.bindValue(":id", id);
     query.bindValue(":name", nombre);
@@ -77,7 +84,7 @@ bool DatabaseManager::actualizarComponente(int id, const QString& nombre,
 
 QVector<QStringList> DatabaseManager::getAllComponents() const {
     QVector<QStringList> components;
-    QSqlQuery query("SELECT * FROM components ORDER BY name");
+    QSqlQuery query("SELECT * FROM components ORDER BY name", m_db);
 
     while (query.next()) {
         QStringList component;
@@ -91,11 +98,12 @@ QVector<QStringList> DatabaseManager::getAllComponents() const {
     }
     return components;
 }
+
 bool DatabaseManager::eliminarComponente(const QString &id) {
-        QSqlQuery query;
-        query.prepare("DELETE FROM components WHERE id = :id");
-        query.bindValue(":id", id);
-        return query.exec();
+    QSqlQuery query(m_db);
+    query.prepare("DELETE FROM components WHERE id = :id");
+    query.bindValue(":id", id);
+    return query.exec();
 }
 
 QSqlError DatabaseManager::lastError() const {
@@ -106,4 +114,6 @@ DatabaseManager::~DatabaseManager() {
     if (m_db.isOpen()) {
         m_db.close();
     }
+    // Elimina la conexión nombrada al destruir el objeto
+    //QSqlDatabase::removeDatabase(CONNECTION_NAME);
 }

@@ -314,6 +314,8 @@ CMakeFiles/Inventario.dir/Inventario_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
  /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/moc_inventario.cpp \
  /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../inventario.h \
  /home/jonatan/Inventario/build/Desktop-Debug/Inventario_autogen/EWIEGA46WW/../../../../Database/DatabaseManager.h \

@@ -4,41 +4,55 @@
 #include "./Models/CustomFilterProxyModel.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <QString>
+#include <QDir>
+#include <QFile>
+#include <QTextStream>
+#include <QStandardPaths>
+#include <QDir>
+#include <QFileDialog>
+#include <QPdfWriter>
+#include <QPainter>
 
 Inventario::Inventario(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::Inventario),
-    m_dbManager(new DatabaseManager(this)),
-    m_componentModel(new ComponentModel(m_dbManager, this)),
-    m_proxyModel(new CustomFilterProxyModel(this))
+    : QMainWindow(parent), ui(new Ui::Inventario)
 {
     ui->setupUi(this);
 
-    // 1. Configuración inicial de la base de datos
-    if (!m_dbManager->initialize()) {
+    // 1. Inicializa primero el DatabaseManager
+    m_dbManager = new DatabaseManager(this);
+
+    // 2. Abre la base de datos ANTES de crear los modelos
+    QString dbPath = QDir::current().absoluteFilePath("inventario.db");
+    if (!m_dbManager->initialize(dbPath)) {
         QMessageBox::critical(this, "Error", "No se pudo iniciar la base de datos");
         qApp->exit(1);
         return;
     }
 
-    // 2. Configuración del modelo y proxy
+    // 3. Crea los modelos
+    m_componentModel = new ComponentModel(m_dbManager, this);
+    m_proxyModel = new CustomFilterProxyModel(this);
+
+    // 4. Configuración del modelo y proxy
     m_proxyModel->setSourceModel(m_componentModel);
     m_proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     m_proxyModel->setFilterKeyColumn(-1); // Buscar en todas las columnas
     ui->tableView->setModel(m_proxyModel);
 
-    // 3. Cargar datos iniciales
-    m_componentModel->refresh(); // ¡Esta es la línea clave que faltaba!
+    // 5. Cargar datos iniciales
+    m_componentModel->refresh();
 
-    // 4. Configuración de la tabla
+    // 6. Configuración de la tabla
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->tableView->setSortingEnabled(true);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 
-    // 5. Implementación de la ventana refresh
+    // 7. Implementación de la ventana refresh
     ui->comboFiltrarTipo->addItems({"Todos", "Electrónico", "Mecánico", "Herramienta", "Consumible"});
 
-    // 6.conexiones:
+    // 8.conexiones:
     connect(ui->lineEditBuscar, &QLineEdit::textChanged,
             this, &Inventario::on_buscarTextoCambiado);
 
@@ -186,6 +200,123 @@ void Inventario::on_eliminarClicked() {
 }
 void Inventario::on_reporteClicked()
 {
-    QMessageBox::information(this, "Reporte", "Función Reporte seleccionada");
-    // Aquí generarás los reportes PDF/CSV
+    QVector<QStringList> componentes = m_dbManager->getAllComponents();
+
+    QString defaultPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    QString csvPath = QFileDialog::getSaveFileName(this, "Guardar reporte CSV", defaultPath + "/reporte.csv", "CSV (*.csv)");
+    if (csvPath.isEmpty()) return;
+
+    QFile csvFile(csvPath);
+    if (csvFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&csvFile);
+        out.setCodec("UTF-8");
+        out << QChar(0xFEFF);
+        out << "ID,Nombre,Tipo,Cantidad,Ubicacion,Fecha de compra\n";
+        for (const QStringList &row : componentes) {
+            QStringList escapedRow;
+            for (const QString &field : row) {
+                QString escaped = field;
+                escaped.replace("\"", "\"\"");
+                escapedRow << "\"" + escaped + "\"";
+            }
+            out << escapedRow.join(",") << "\n";
+        }
+        csvFile.close();
+    } else {
+        QMessageBox::warning(this, "Error", "No se pudo guardar el archivo CSV");
+        return;
+    }   
+
+    // 4. Guardar PDF
+    QString pdfPath = QFileDialog::getSaveFileName(this, "Guardar reporte PDF", defaultPath + "/reporte.pdf", "PDF (*.pdf)");
+    if (pdfPath.isEmpty()) return;
+
+    QPdfWriter pdfWriter(pdfPath);
+    pdfWriter.setPageSize(QPageSize(QPageSize::A4));
+    QPainter painter(&pdfWriter);
+
+    QFont font;
+    font.setBold(true);
+    painter.setFont(font);
+
+    // Encabezados
+    QStringList headers = {"ID", "Nombre", "Tipo", "Cantidad", "Ubicación", "Fecha de compra"};
+
+    // 1. Calcular el ancho máximo de cada columna
+    QFontMetrics metrics(painter.font());
+    QVector<int> colWidths(headers.size(), 0);
+
+    // Considera el ancho de los encabezados
+    for (int i = 0; i < headers.size(); ++i)
+        colWidths[i] = metrics.horizontalAdvance(headers[i]);
+
+    // Considera el ancho de los datos
+    font.setBold(false);
+    painter.setFont(font);
+    QFontMetrics dataMetrics(painter.font());
+    for (const QStringList &row : componentes) {
+        for (int i = 0; i < row.size() && i < colWidths.size(); ++i) {
+            int w = dataMetrics.horizontalAdvance(row[i]);
+            if (w > colWidths[i]) colWidths[i] = w;
+        }
+    }
+
+    // 2. Sumar un margen a cada columna
+    for (int &w : colWidths) w += 100;
+
+    // 3. Calcular las posiciones X de cada columna
+    QVector<int> colX(headers.size());
+    colX[0] = 100;
+    for (int i = 1; i < colX.size(); ++i)
+        colX[i] = colX[i-1] + colWidths[i-1];
+
+    // 4. Imprimir encabezados y líneas de columna
+    font.setBold(true);
+    painter.setFont(font);
+    int y = 100;
+    int rowHeight = metrics.height() + 20;
+    int tableTop = y - metrics.ascent();
+    int tableBottom = y + (componentes.size() + 1) * rowHeight;
+
+    // Dibuja líneas verticales de columna
+    for (int i = 0; i <= headers.size(); ++i) {
+        int xLine = (i < colX.size()) ? colX[i] : colX.last() + colWidths.last();
+        painter.drawLine(xLine, tableTop, xLine, tableBottom);
+    }
+
+    // Dibuja encabezados
+    for (int i = 0; i < headers.size(); ++i)
+        painter.drawText(colX[i] + 5, y, headers[i]);
+
+    // Dibuja línea horizontal debajo del encabezado
+    painter.drawLine(colX[0], y + 50, colX.last() + colWidths.last(), y + 50);
+
+    // 5. Imprimir datos
+    font.setBold(false);
+    painter.setFont(font);
+    y += rowHeight;
+    for (const QStringList &row : componentes) {
+        for (int i = 0; i < row.size() && i < colX.size(); ++i)
+            painter.drawText(colX[i] + 5, y, row[i]);
+        y += rowHeight;
+        if (y > pdfWriter.height() - 100) {
+            pdfWriter.newPage();
+            y = 100 + rowHeight;
+            // Reimprimir encabezados y líneas en la nueva página
+            font.setBold(true);
+            painter.setFont(font);
+            for (int i = 0; i < headers.size(); ++i)
+                painter.drawText(colX[i] + 5, 100, headers[i]);
+            painter.drawLine(colX[0], 100 + 5, colX.last() + colWidths.last(), 100 + 5);
+            for (int i = 0; i <= headers.size(); ++i) {
+                int xLine = (i < colX.size()) ? colX[i] : colX.last() + colWidths.last();
+                painter.drawLine(xLine, 100 - metrics.ascent(), xLine, pdfWriter.height() - 100);
+            }
+            font.setBold(false);
+            painter.setFont(font);
+        }
+    }
+    painter.end();
+
+    QMessageBox::information(this, "Reporte", "Reportes CSV y PDF generados correctamente.");
 }
