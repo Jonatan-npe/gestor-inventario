@@ -1,0 +1,9 @@
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/Inventario.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/edit_cache.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/rebuild_cache.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/list_install_components.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/install.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/install/local.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/install/strip.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/Inventario_autogen_timestamp_deps.dir
+/home/jonatan/Inventario/build/Desktop-Release/CMakeFiles/Inventario_autogen.dir

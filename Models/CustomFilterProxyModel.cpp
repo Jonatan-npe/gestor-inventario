@@ -14,13 +14,13 @@ bool CustomFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &
     QString type = sourceModel()->data(typeIndex).toString();
 
     // Si hay un filtro de texto activo (búsqueda)
-    if (!filterRegExp().pattern().isEmpty()) {
+    if (!filterRegularExpression().pattern().isEmpty()) {
         bool matchesSearch = false;
         // Recorre todas las columnas de la fila
         for (int col = 0; col < sourceModel()->columnCount(); ++col) {
             QModelIndex idx = sourceModel()->index(sourceRow, col, sourceParent);
             // Si alguna columna contiene el texto buscado, acepta la fila
-            if (idx.data().toString().contains(filterRegExp())) {
+            if (filterRegularExpression().match(idx.data().toString()).hasMatch()) {
                 matchesSearch = true;
                 break;
             }

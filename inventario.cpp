@@ -13,6 +13,7 @@
 #include <QFileDialog>
 #include <QPdfWriter>
 #include <QPainter>
+#include <QRegularExpression>
 
 Inventario::Inventario(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::Inventario)
@@ -100,8 +101,10 @@ void Inventario::on_buscarTextoCambiado(const QString &texto)
     if (!m_proxyModel || !m_componentModel) return;
 
     // Crea una expresión regular para filtrar (no distingue mayúsculas/minúsculas)
-    QRegExp regex(texto, Qt::CaseInsensitive, QRegExp::FixedString);
-    m_proxyModel->setFilterRegExp(QRegExp(texto, Qt::CaseInsensitive));
+    QRegularExpression regex(texto, QRegularExpression::CaseInsensitiveOption);
+    m_proxyModel->setFilterRegularExpression(
+        QRegularExpression(texto, QRegularExpression::CaseInsensitiveOption)
+        );
 
     // Actualiza la vista de la tabla para reflejar los cambios
     ui->tableView->viewport()->update();
@@ -238,7 +241,6 @@ void Inventario::on_reporteClicked()
     QFile csvFile(csvPath);
     if (csvFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&csvFile);
-        out.setCodec("UTF-8");      // Usa codificación UTF-8 para soportar caracteres especiales
         out << QChar(0xFEFF);       // Escribe el BOM para que Excel reconozca UTF-8
         out << "ID,Nombre,Tipo,Cantidad,Ubicacion,Fecha de compra\n"; // Escribe los encabezados
 
